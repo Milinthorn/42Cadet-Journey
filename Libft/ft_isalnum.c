@@ -1,3 +1,5 @@
+#include "libft.h"
+
 int ft_isalnum (int ar)
 {
     if((ar >= 'A' && ar <= 'Z') || (ar >= 'a' && ar <= 'z') || (ar >= 0 && ar <= 9))
@@ -7,6 +9,7 @@ int ft_isalnum (int ar)
 }
 
 #include <stdio.h>
+
 int main()
 {
     char ch = '@';

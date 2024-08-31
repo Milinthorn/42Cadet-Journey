@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char *ft_strchr(char *str, int search_str)
 {
     int i,j;

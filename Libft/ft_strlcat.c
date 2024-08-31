@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
 
 size_t ft_strlcat( char *dst, const char *src, size_t size)
 {
@@ -16,15 +15,15 @@ size_t ft_strlcat( char *dst, const char *src, size_t size)
         j++;
     }	
     dst[i] = '\0';
-
+    return 0;
 }
 
 #include <stdio.h>
 int main()
 {
-    char dst[20] = "Milinthorn"; // 10  
+    char dst[50] = "Milinthorn"; // 10  
     char src[] = " Pinthasiri";  // 11
-    int size = 3;
+    int size = 22;
     printf("%ld\n", ft_strlcat(dst, src, size));
     printf("%s", dst);
 }

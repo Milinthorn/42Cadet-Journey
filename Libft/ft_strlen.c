@@ -1,4 +1,6 @@
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t ft_strlen(const char *str)
 {
     int len;
     int i;
@@ -17,5 +19,5 @@ int ft_strlen(char *str)
 int main()
 {
     char str[] = "Andy Goodboy";
-    printf("%d", ft_strlen(str));
+    printf("%ld", ft_strlen(str));
 }

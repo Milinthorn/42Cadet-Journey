@@ -1,7 +1,9 @@
-int ft_strlcpy(char *dest, char *src, int dstsizeof)
+#include "libft.h"
+
+size_t ft_strlcpy(char *dest, char *src, size_t dstsizeof)
 {
-    int len;
-	int	i;
+    size_t len;
+	size_t	i;
 
 	len = 0;
     i = 0;
@@ -24,7 +26,7 @@ int main()
     char dest[10];
     char src[] = "Scoopy Doo";
     int dstsizeof = 7; 
-    printf("%d\n", ft_strlcpy(dest, src, dstsizeof));
+    printf("%ld\n", ft_strlcpy(dest, src, dstsizeof));
     printf("%s", dest);
 }
 
