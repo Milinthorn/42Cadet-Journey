@@ -6,14 +6,14 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:51:41 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/01 14:52:31 by mpinthas         ###   ########.fr       */
+/*   Updated: 2024/09/01 17:37:45 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && s1[i] == s2[i])
