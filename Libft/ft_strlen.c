@@ -3,16 +3,13 @@
 size_t ft_strlen(const char *str)
 {
     int len;
-    int i;
 
-    len = 1;
-    i = 1;
+    len = 0;
     while(str[len] != '\0')
     {
         len++;
-        i++;
     }
-    return (i);
+    return (len);
 }
 
 #include <stdio.h>

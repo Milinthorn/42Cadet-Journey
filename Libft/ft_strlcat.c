@@ -2,28 +2,29 @@
 
 size_t ft_strlcat( char *dst, const char *src, size_t size)
 {
-    size_t i = 0;
-    size_t j = 0;
-    size_t m = 0;
+    size_t i;
+    size_t j;
 
-    while(dst[i] != '\0') // 9
-        i++;
-    while(src[j] != '\0' && j < size)
-    {
-        dst[i] = src[j]; 
-        i++;
-        j++;
-    }	
-    dst[i] = '\0';
-    return 0;
+    i = ft_strlen(dst);
+	j = 0;
+	if (size <= i)
+		return (size + i);
+	while (src[j] != '\0' && i + 1 < size)
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (i + ft_strlen(&src[j]));
 }
 
 #include <stdio.h>
 int main()
 {
-    char dst[50] = "Milinthorn"; // 10  
-    char src[] = " Pinthasiri";  // 11
-    int size = 22;
+    char dst[10] = "Hello"; // 5  
+    char src[] = "World";  // 5
+    int size = 7; // เก็บได้แค่ 7 ไบต์
     printf("%ld\n", ft_strlcat(dst, src, size));
     printf("%s", dst);
 }

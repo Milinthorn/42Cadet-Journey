@@ -26,4 +26,5 @@ char *ft_strrchr(char *str, int search_str);
 int ft_tolower(int ch);
 int ft_toupper(int ch);
 
+
 #endif
