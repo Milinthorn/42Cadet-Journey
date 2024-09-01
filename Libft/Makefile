@@ -1,41 +1,24 @@
-# ชื่อของไฟล์ไบนารีที่ต้องการสร้าง
-TARGET = 
+NAME = libft.a
 
-# คอมไพเลอร์ที่ใช้ (สามารถใช้ gcc หรือ clang)
-CC = clang
+CC = cc
 
-# ออปชันที่ใช้ในการคอมไพล์
 CFLAGS = -Wall -Wextra -Werror
 
-# รายชื่อไฟล์ object ที่จะถูกสร้างจากไฟล์ source
-OBJS = main.o foo.o bar.o
+FILE = ft_atoi.c ft_isdigit.c ft_memmove.c ft_strlen.c ft_toupper.c ft_bzero.c ft_isprint.c ft_memset.c ft_strncmp.c ft_isalnum.c ft_memchr.c ft_strchr.c ft_strnstr.c ft_isalpha.c ft_memcmp.c ft_strlcat.c ft_strrchr.c ft_isascii.c ft_memcpy.c ft_strlcpy.c ft_tolower.c
 
-# เป้าหมายเริ่มต้น (default target)
-all: $(TARGET)
+OBJ = $(FILE:.c=.o)
 
-# เป้าหมายสำหรับการสร้างไบนารีจาก object files
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+all : $(NAME)
 
-# กฎการสร้างไฟล์ object จากไฟล์ source
-main.o: main.c foo.h bar.h
-	$(CC) $(CFLAGS) -c main.c
+$(NAME) : $(OBJ)
+	ar -rc $(NAME) $(OBJ)
 
-foo.o: foo.c foo.h
-	$(CC) $(CFLAGS) -c foo.c
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-bar.o: bar.c bar.h
-	$(CC) $(CFLAGS) -c bar.c
+clean :
+	rm -rf $(OBJ)
 
-# เป้าหมายสำหรับการล้างไฟล์ object และไฟล์ไบนารี
-clean:
-	rm -f $(OBJS) $(TARGET)
+fclean : clean
+	rm -rf $(NAME)
 
-# เป้าหมายสำหรับการทำความสะอาดอย่างละเอียด (รวมไฟล์สำรอง)
-fclean: clean
-	rm -f $(TARGET)
-
-# เป้าหมายสำหรับการคอมไพล์ใหม่ทั้งหมด
-re: fclean all
-
-.PHONY: all clean fclean re

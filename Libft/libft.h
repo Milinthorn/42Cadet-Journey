@@ -1,11 +1,21 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 14:26:59 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/01 14:27:24 by mpinthas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
 #include <stdlib.h>
 
 int ft_atoi(const char *str);
-void bzero(void *s, size_t n);
+void ft_bzero(void *s, size_t n);
 int ft_isalnum (int ar);
 int ft_isalpha(int c);
 int ft_isascii(int c);
@@ -25,6 +35,5 @@ char *ft_strnstr(const char *dest, const char *src, size_t len);
 char *ft_strrchr(char *str, int search_str);
 int ft_tolower(int ch);
 int ft_toupper(int ch);
-
 
 #endif

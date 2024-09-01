@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 14:20:58 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/01 14:21:47 by mpinthas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int	i;
+	int	i;
 	int	mn;
 	int	num;
 
@@ -28,10 +39,9 @@ int ft_atoi(const char *str)
 	}
 	return (num * mn);
 }
-
-#include <stdio.h>
-int main()
-{
-    char	str[] = "  -+--82974ap457";
-	printf("%d", ft_atoi(str));
-}
+// #include <stdio.h>
+// int main()
+// {
+//     char	str[] = "  -+--82974ap457";
+// 	printf("%d", ft_atoi(str));
+// }

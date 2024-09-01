@@ -1,27 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 14:39:03 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/01 14:41:34 by mpinthas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-void *ft_memcpy(void *dest_str, const void *src_str, size_t n)
+void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-    char *dest = (char *)dest_str;
-    char *src = (char *)src_str;
-    int i = 0;
-    int j =0;
+	char *dest;
+	char *src;
+	int i;
+	int j;
 
-    while(src[j] != '\0' && i < n)
-    {
-        dest[i] = src[j];
-        i++;
-        j++;
-    }
-    return (dest);
-}
-
-#include <stdio.h>
-
-int main()
-{
-    char dest[] = "piggy happy";
-    char src[] = "Happy Birthday";
-    ft_memcpy(dest, src, 2);
-    printf("%s", dest);
+	dest = (char *)dest_str;
+	src = (char *)src_str;
+	i = 0;
+	j = 0;
+	while(src[j] != '\0' && i < n)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	return (dest);
 }

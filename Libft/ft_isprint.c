@@ -1,19 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 14:31:57 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/01 14:32:43 by mpinthas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-int ft_isprint(int arg)
+int	ft_isprint(int arg)
 {
-    if(arg >= 32 && arg <= 127)
-    {
-        return (1);
-    }
-    return (0);
-}
-
-#include <stdio.h>
-int main()
-{
-    // int num = 48; and char s = 48; is printable
-    // int num = 1; and char s = 1; is not printable
-    char s = '2';
-    printf("%d", ft_isprint(s));
+	if (arg >= 32 && arg <= 127)
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -1,20 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/01 14:50:26 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/01 14:51:11 by mpinthas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    int len;
-
-    len = 0;
-    while(str[len] != '\0')
-    {
-        len++;
-    }
-    return (len);
-}
-
-#include <stdio.h>
-int main()
-{
-    char str[] = "Andy Goodboy";
-    printf("%ld", ft_strlen(str));
+	int	len;
+	
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
 }
