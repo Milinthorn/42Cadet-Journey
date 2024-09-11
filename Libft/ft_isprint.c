@@ -6,14 +6,14 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:31:57 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/01 14:32:43 by mpinthas         ###   ########.fr       */
+/*   Updated: 2024/09/10 22:37:10 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isprint(int arg)
+int	ft_isprint(int c)
 {
-	if (arg >= 32 && arg <= 127)
+	if (c >= 32 && c <= 126)
 	{
 		return (1);
 	}

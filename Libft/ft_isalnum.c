@@ -6,23 +6,16 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:24:06 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/01 14:25:10 by mpinthas         ###   ########.fr       */
+/*   Updated: 2024/09/10 22:35:06 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isalnum(int ar)
+int	ft_isalnum(int c)
 {
-	if ((ar >= 'A' && ar <= 'Z') || (ar >= 'a' && ar <= 'z')
-		|| (ar >= 0 && ar <= 9))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
+		|| (c >= '0' && c <= '9'))
 		return (1);
 	else
 		return (0);
 }
-// #include <stdio.h>
-
-// int main()
-// {
-//     char ch = '@';
-//     printf("%d", ft_isalnum(ch));
-// }

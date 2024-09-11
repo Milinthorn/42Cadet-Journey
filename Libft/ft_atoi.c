@@ -13,35 +13,27 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	mn;
-	int	num;
+	int	sum;
+	int	sign;
+	int	found;
 
-	i = 0;
-	mn = 1;
-	num = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	sum = 0;
+	sign = 1;
+	found = 1;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\r' || *str == '\v')
+		str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && found)
 	{
-		i++;
+		if (*str >= '0' && *str <= '9')
+			sum = sum * 10 + *str - '0';
+		else
+			found = 0;
+		str++;
 	}
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			mn = mn * -1;
-		}
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		num = num * 10 + (str[i] - 48);
-		i++;
-	}
-	return (num * mn);
+	return (sign * sum);
 }
-// #include <stdio.h>
-// int main()
-// {
-//     char	str[] = "  -+--82974ap457";
-// 	printf("%d", ft_atoi(str));
-// }

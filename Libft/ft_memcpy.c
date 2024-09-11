@@ -15,14 +15,16 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
 	char	*dest;
 	char	*src;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	dest = (char *)dest_str;
 	src = (char *)src_str;
 	i = 0;
 	j = 0;
-	while (src[j] != '\0' && i < n)
+	if (!dest && !src)
+		return (0);
+	while (i < n)
 	{
 		dest[i] = src[j];
 		i++;

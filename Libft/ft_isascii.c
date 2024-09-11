@@ -19,9 +19,3 @@ int	ft_isascii(int c)
 	}
 	return (0);
 }
-// #include <stdio.h>
-// int main()
-// {
-//     char s = ';';
-//     printf("%d", ft_isascii(s));
-// }
