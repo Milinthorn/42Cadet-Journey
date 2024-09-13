@@ -6,7 +6,7 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:26:59 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/11 13:14:58 by mpinthas         ###   ########.fr       */
+/*   Updated: 2024/09/13 09:34:26 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,19 +16,19 @@
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
-int		ft_isalnum(int ar);
+int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
-int		ft_isdigit(int arg);
-int		ft_isprint(int arg);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 void	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n);
-void	*ft_memmove(void *dest_str, const void *src_str, size_t numBytes);
+void	*ft_memmove(void *dest_str, const void *src_str, size_t len);
 void	*ft_memset(void *str, int c, size_t n);
 char	*ft_strchr(const char *str, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-size_t	ft_strlcpy(char *dest, char *src, size_t dstsizeof);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *dest, const char *src, size_t len);
