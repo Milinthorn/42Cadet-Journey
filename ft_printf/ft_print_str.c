@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 18:40:16 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/15 09:53:44 by mpinthas         ###   ########.fr       */
+/*   Created: 2024/09/15 10:29:13 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/15 10:29:16 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_char(char c)
+int     ft_print_str(char *str)
 {
-	write(1, &c, 1);
-	return (1);
+    int i;
+
+    i = 0;
+    if (!str)
+    {
+        write(1, "(null)", 6);
+        return (6);
+    }
+    while (str[i])
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+    return (i);
 }

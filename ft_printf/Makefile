@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILE = ft_printf.c
+FILE = ft_printf.c ft_print_char.c ft_print_str.c ft_print_int.c
 
 OBJ = $(FILE:.c=.o)
 
