@@ -12,61 +12,52 @@
 
 #include "ft_printf.h"
 
-int    ft_printer(va_list arg, const char alpha)
+int	ft_printer(va_list arg, const char alpha)
 {
-    // บอกว่าเป็น csdupxX ให้ส่งเข้าฟังก์ชั่นย่อยของแต่ละตัวไปทำหน้าที่ ว่ามีกี่ตัว
-    int     len;
+	int	len;
 
-    len = 0;
-    if (alpha == 'c')
-        len += ft_print_char((char)va_arg(arg, int));
-    else if (alpha == 's')
-        len += ft_print_str(va_arg(arg, char *));
-    else if (alpha == 'd' || alpha == 'i')
-        len += ft_print_int(va_arg(arg, int));
-    else if (alpha == 'u')
-        len += ft_print_uint(va_arg(arg, unsigned int));
-    else if (alpha == 'x')
-        len += ft_print_hex_tolower(va_arg(arg, unsigned int));
-    else if (alpha == 'X')
-        len += ft_print_hex_toupper(va_arg(arg, unsigned int));
-    return (len);
+	len = 0;
+	if (alpha == 'c')
+		len += ft_print_char((char)va_arg(arg, int));
+	else if (alpha == 's')
+		len += ft_print_str(va_arg(arg, char *));
+	else if (alpha == 'd' || alpha == 'i')
+		len += ft_print_int(va_arg(arg, int));
+	else if (alpha == 'u')
+		len += ft_print_uint(va_arg(arg, unsigned int));
+	else if (alpha == 'x')
+		len += ft_print_hex_tolower(va_arg(arg, unsigned int));
+	else if (alpha == 'X')
+		len += ft_print_hex_toupper(va_arg(arg, unsigned int));
+	else if (alpha == 'p')
+		len += ft_print_ptr(va_arg(arg, void *));
+	return (len);
 }
 
-int     ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-    int     count;
-    va_list     arg;
-    va_start(arg, str);
-    // printf("my name is %s", "John") อ่านทีละตัวจนเจอ % แล้วทำการเช็คว่าตัวถัดไปคืออะไรในนี้ csdupxX (เรียกฟังก์ชั่น printer)
-    count = 0;
-    while (*str)
-    {
-        if (*str == '%')
-        {
-            str++;
-            if (*str == '%')
-                count += write(1, "%", 1);
-            else if (*str == 'c' || *str == 's' || *str == 'd' || *str == 'i' || *str == 'u' || *str == 'x' || *str == 'X')
-            {
-                count += ft_printer(arg, *str);
-            }
-            else
-            {
-                break;
-            }
-        }
-        else
-        {
-            count += ft_print_char(*str);
-        }
-        str++;
-    }
-    va_end(arg);
-    return (count);
+	int		count;
+	va_list	arg;
 
+	va_start(arg, str);
+	count = 0;
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			if (*str == '%')
+				count += write(1, "%", 1);
+			else if (*str == 'c' || *str == 's' || *str == 'd' || *str == 'i'
+				|| *str == 'u' || *str == 'x' || *str == 'X' || *str == 'p')
+				count += ft_printer(arg, *str);
+			else
+				break ;
+		}
+		else
+			count += ft_print_char(*str);
+		str++;
+	}
+	va_end(arg);
+	return (count);
 }
-
-
-// %w%q%y
-// %sd dog cat 

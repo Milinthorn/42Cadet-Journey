@@ -12,58 +12,42 @@
 
 #include "ft_printf.h"
 
-static	ft_print_char(char c)
+int	ft_hex(unsigned long num)
 {
-	write(1, &c, 1);
-	return (1);
+	unsigned long	count;
+	char			c;
+
+	count = 0;
+	if (num >= 16)
+	{
+		count += ft_hex(num / 16);
+	}
+	num = num % 16;
+	if (num < 10)
+	{
+		c = num + '0';
+	}
+	else
+	{
+		c = num - 10 + 'a';
+	}
+	count += ft_print_char(c);
+	return (count);
 }
 
-static    ft_hex(unsigned long num)
+int	ft_print_ptr(void *ptr)
 {
-    unsigned long count;
-    char c;
+	int				count;
+	unsigned long	pp;
 
-    count = 0;
-    if (num >= 16)
-    {
-        count += ft_hex(num / 16);
-    } 
-    num = num % 16;
-    if (num < 10)
-    {
-        c = num + '0'; 
-    } 
-    else
-    {
-        c = num - 10 + 'a';
-    }
-    count += ft_print_char(c);
-    return (count);
-    
-}
-
-int ft_print_ptr(void *ptr)
-{
-    int count;
-
-    count = 0;
-    unsigned long pp = (unsigned long)ptr;
-    count += write(1, "0x", 2);
-    count += ft_hex(pp); 
-    return (count);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	int n = 4658;
-	int length = ft_print_ptr(&n);
-	write(1, "\n", 1); 
-	printf("Printed length: %d\n", length);  
-    int no = -1;
-	int len = ft_print_ptr(&no);
-	write(1, "\n", 1); 
-	printf("Printed length: %d\n", len); 
-    printf("%p", &no);
-	return (0);
+	count = 0;
+	pp = (unsigned long)ptr;
+	if (ptr == NULL)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	count += write(1, "0x", 2);
+	count += ft_hex(pp);
+	return (count);
 }
