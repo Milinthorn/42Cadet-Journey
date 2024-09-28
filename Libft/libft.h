@@ -6,13 +6,20 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 14:26:59 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/13 09:34:26 by mpinthas         ###   ########.fr       */
+/*   Updated: 2024/09/22 14:00:15 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+    void    *content;
+    struct s_list   *next;
+} t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -48,5 +55,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list  *ft_lstnew(void *content);
 
 #endif
