@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int ft_print_hex_toupper(int num)
+int ft_print_hex_toupper(unsigned int num)
 {
-    int count;
+    unsigned int count;
     char c;
 
     count = 0;

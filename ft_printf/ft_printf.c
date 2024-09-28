@@ -27,9 +27,9 @@ int    ft_printer(va_list arg, const char alpha)
     else if (alpha == 'u')
         len += ft_print_uint(va_arg(arg, unsigned int));
     else if (alpha == 'x')
-        len += ft_print_hex_tolower(va_arg(arg, int));
+        len += ft_print_hex_tolower(va_arg(arg, unsigned int));
     else if (alpha == 'X')
-        len += ft_print_hex_toupper(va_arg(arg, int));
+        len += ft_print_hex_toupper(va_arg(arg, unsigned int));
     return (len);
 }
 

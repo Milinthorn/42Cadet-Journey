@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-int	ft_print_char(char c)
+static	ft_print_char(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int    ft_hex(uintptr_t num)
+static    ft_hex(unsigned long num)
 {
-    int count;
+    unsigned long count;
     char c;
 
     count = 0;
@@ -47,23 +47,23 @@ int ft_print_ptr(void *ptr)
     int count;
 
     count = 0;
-    uintptr_t ptr_ad = (uintptr_t)ptr;
+    unsigned long pp = (unsigned long)ptr;
     count += write(1, "0x", 2);
-    ft_hex(ptr_ad);
-    count += ft_hex(ptr_ad); 
+    count += ft_hex(pp); 
     return (count);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *str = "hello";
-// 	int	len = ft_print_ptr(str);
-// 	write(1, "\n", 1); 
-// 	int n = 4658;
-// 	int length = ft_print_ptr(&n);
-// 	write(1, "\n", 1); 
-// 	printf("Printed length: %d\n", len);
-// 	printf("Printed length: %d\n", length);  
-// 	return (0);
-// }
+#include <stdio.h>
+int	main(void)
+{
+	int n = 4658;
+	int length = ft_print_ptr(&n);
+	write(1, "\n", 1); 
+	printf("Printed length: %d\n", length);  
+    int no = -1;
+	int len = ft_print_ptr(&no);
+	write(1, "\n", 1); 
+	printf("Printed length: %d\n", len); 
+    printf("%p", &no);
+	return (0);
+}

@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int ft_print_hex_tolower(int num)
+int ft_print_hex_tolower(unsigned int num)
 {
-    int count;
+    unsigned int count;
     char c;
 
     count = 0;
