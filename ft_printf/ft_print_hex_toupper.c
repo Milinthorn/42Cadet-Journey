@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex_toupper.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/15 10:51:35 by mpinthas          #+#    #+#             */
-/*   Updated: 2024/09/21 12:42:26 by mpinthas         ###   ########.fr       */
+/*   Created: 2024/09/22 13:28:32 by mpinthas          #+#    #+#             */
+/*   Updated: 2024/09/28 13:17:45 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_print_int(int    num)
+int ft_print_hex_toupper(int num)
 {
     int count;
-    char    c;
-    
+    char c;
+
     count = 0;
-    if (num == -2147483648)
+    if (num >= 16)
     {
-        count += write(1, "-2147483648", 11);
-        return (count);
+        count = ft_print_hex_toupper(num / 16); // 782 // 48 // 3
     }
-    if (num < 0)
+    num = num % 16; // 3 // 0 // 14
+    if (num < 10)
     {
-        count += write(1, "-", 1);
-        num = -num;
+        c = num + '0'; 
+    } 
+    else
+    {
+        c = num - 10 + 'A';
     }
-    if (num > 9)
-        count += ft_print_int(num / 10);
-    c = (num % 10) + '0';
-    count += write(1, &c, 1);
+    count += ft_print_char(c);
     return (count);
 }
-// #include <stdio.h>
 
-// int main()
+// #include <stdio.h>
+// int     main()
 // {
-//     printf("%d", ft_print_int(1234));
+//    printf("%d", ft_print_hex_toupper(782));
 // }
+
+// หาร(/)ผลลัพธ์เป็น 0 ให้จบ
+// เศษ(%) คือ คำตอบ
