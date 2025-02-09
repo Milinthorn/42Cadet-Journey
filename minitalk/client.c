@@ -6,7 +6,7 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:46:18 by mpinthas          #+#    #+#             */
-/*   Updated: 2025/02/08 16:45:12 by mpinthas         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:14:13 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	send_bit(pid_t server_pid, char c)
 			kill(server_pid, SIGUSR2);
 		else
 			kill(server_pid, SIGUSR1);
-		usleep(200);
+		usleep(1000);
 		i--;
 	}
 }

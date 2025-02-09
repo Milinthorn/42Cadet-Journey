@@ -6,7 +6,7 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:42:04 by mpinthas          #+#    #+#             */
-/*   Updated: 2025/02/08 16:42:07 by mpinthas         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:14:45 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <sys/types.h>
 
 void	send_bit(pid_t server_pid, char c);
 void	get_bit(int signum);

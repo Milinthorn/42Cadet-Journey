@@ -6,11 +6,10 @@
 /*   By: mpinthas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 11:46:20 by mpinthas          #+#    #+#             */
-/*   Updated: 2025/02/08 16:55:16 by mpinthas         ###   ########.fr       */
+/*   Updated: 2025/02/08 19:10:47 by mpinthas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
 #include "minitalk.h"
 
 unsigned short	g_collect_all = 0;
@@ -48,6 +47,7 @@ int	main(void)
 	printf("Server PID: %d\n", pid);
 	printf("Waiting for signals...\n");
 	sa.sa_handler = get_bit;
+	// sa.sa_flags = ;
 	sa.sa_flags = SA_RESTART;
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGUSR1, &sa, NULL);
